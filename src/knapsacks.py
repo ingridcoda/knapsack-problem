@@ -2,9 +2,9 @@ from model import Knapsack
 
 
 # EQUAÇÃO DE RECORRÊNCIA (PARA 1 ITEM DE CADA TIPO APENAS):
-# OPT(i, b) =   0                                    if b == 0
-#               OPT(i-1, b)                          if b[i] > b
-#               max(v[i] + OPT(i-1, b), OPT(i-1, b)) otherwise
+# OPT(i, b) =   0                                         if b == 0
+#               OPT(i-1, b)                               if b[i] > b
+#               max(v[i] + OPT(i-1, b-b[i]), OPT(i-1, b)) otherwise
 
 
 # Funciona para 1 item de cada tipo apenas, retornando valor
@@ -33,10 +33,10 @@ def knapsack(B, items):
                 M[i][j] = Knapsack(j, M[i - 1][j].items)
                 # print(f"Não coloquei itens, usei anterior")
             else:
-                max_l = items[i].value + M[i - 1][j].get_total_value()
+                max_l = items[i].value + M[i - 1][j - items[i].size].get_total_value()
                 max_r = M[i - 1][j].get_total_value()
                 if max_l > max_r:
-                    M[i][j] = Knapsack(j, M[i - 1][j].items)
+                    M[i][j] = Knapsack(j, M[i - 1][j - items[i].size].items)
                     M[i][j].items.append(items[i])
                     # print(f"Coloquei +1 item {items[i]} - Mochila: {M[i][j]}")
                 else:
