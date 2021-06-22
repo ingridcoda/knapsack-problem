@@ -46,7 +46,8 @@ def knapsack(B, items):
     return M[len(items) - 1][B]
 
 
-# TODO Criar equação de recorrência para 10 itens de cada tipo
+# EQUAÇÃO DE RECORRÊNCIA (PARA 10 ITENS DE CADA TIPO):
+# OPT(i, b) = max ((vi * k) + OPT(i - 1, b - (wi * k)))  if (wi * k) <= b, for 0 <= k <= 10
 
 # TODO Fazer funcionar para 10 itens de cada tipo
 def ten_knapsack(B, items):
