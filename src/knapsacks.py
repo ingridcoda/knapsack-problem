@@ -49,6 +49,37 @@ def knapsack(B, items):
 # EQUAÇÃO DE RECORRÊNCIA (PARA 10 ITENS DE CADA TIPO):
 # OPT(i, b) = max ((vi * k) + OPT(i - 1, b - (wi * k)))  if (wi * k) <= b, for 0 <= k <= 10
 
-# TODO Fazer funcionar para 10 itens de cada tipo
+# TODO Fazer funcionar para 10 itens de cada tipo (atualmente ele não considera ATÉ o item i e sim SÓ o item i)
 def ten_knapsack(B, items):
-    return 0
+    M = []
+    for i in range(len(items) + 1):
+        M.append([])
+        for j in range(B + 1):
+            M[i].append(Knapsack())
+
+    if len(items) == 0 or B == 0:
+        return Knapsack()
+
+    for i in range(1, len(items) + 1):
+        # print(f"item atual {items[i-1]}")
+        for j in range(1, B + 1):
+            # print("J", j)
+            k = 0
+            while items[i - 1].size * (k + 1) <= j:
+                k += 1
+            previous = M[i - 2][j - (items[i - 1].size * k)]
+            # print("anterior", previous)
+            M[i][j] = Knapsack(j, previous.items)
+            for x in range(1, k + 1):
+                # print("X", x)
+                M[i][j].items.append(items[i - 1])
+            # print("posterior", M[i-1][j])
+
+    # for i in range(len(items)+1):
+    #     print([M[i][j].get_total_value() for j in range(B+1)])
+
+    result = M[0][B]
+    for i in range(1, len(items) + 1):
+        if M[i][B].get_total_value() > result.get_total_value():
+            result = M[i][B]
+    return result
