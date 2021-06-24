@@ -100,8 +100,6 @@ def test_ten_knapsack_best_value_inst_1():
         print(f" - Itens por tipo: {items}")
         print(f" - Quantidade itens esperados: {len(items_expected)}")
         print(f" - Quantidade itens obtidos: {len(result.items)}")
-        print(f" - Itens esperados: {items_expected}")
-        print(f" - Itens obtidos: {result.items}")
         print(f" - Valor esperado: {value_expected}")
         print(f" - Valor obtido: {result.get_total_value()}\n")
         assert len(items_expected) == len(result.items)
@@ -128,7 +126,6 @@ def test_ten_knapsack_best_value_inst_2():
         print(f" - Tamanho mochila: {knapsack_size}")
         print(f" - Itens por tipo: {items}")
         print(f" - Quantidade itens obtidos: {len(result.items)}")
-        # print(f" - Itens obtidos: {result.items}")
         print(f" - Valor obtido: {result.get_total_value()}\n")
 
         print("test_ten_knapsack_best_value_inst_2 executado!\n")
@@ -147,7 +144,6 @@ def test_ten_knapsack_best_value_inst_3():
         print(f" - Tamanho mochila: {knapsack_size}")
         print(f" - Itens por tipo: {items}")
         print(f" - Quantidade itens obtidos: {len(result.items)}")
-        # print(f" - Itens obtidos: {result.items}")
         print(f" - Valor obtido: {result.get_total_value()}\n")
 
         print("test_ten_knapsack_best_value_inst_3 executado!\n")
@@ -167,7 +163,6 @@ def test_ten_knapsack_best_value_inst_4():
         print(f" - Tamanho mochila: {knapsack_size}")
         print(f" - Itens por tipo: {items}")
         print(f" - Quantidade itens obtidos: {len(result.items)}")
-        # print(f" - Itens obtidos: {result.items}")
         print(f" - Valor obtido: {result.get_total_value()}\n")
 
         print("test_ten_knapsack_best_value_inst_4 executado!\n")
@@ -191,7 +186,6 @@ def test_ten_knapsack_best_value_inst_5():
         print(f" - Tamanho mochila: {knapsack_size}")
         print(f" - Itens por tipo: {items}")
         print(f" - Quantidade itens obtidos: {len(result.items)}")
-        # print(f" - Itens obtidos: {result.items}")
         print(f" - Valor obtido: {result.get_total_value()}\n")
 
         print("test_ten_knapsack_best_value_inst_5 executado!\n")
@@ -220,8 +214,6 @@ def test_ten_knapsack_best_value_inst_6():
         print(f" - Itens por tipo: {items}")
         print(f" - Quantidade itens esperados: {len(items_expected)}")
         print(f" - Quantidade itens obtidos: {len(result.items)}")
-        # print(f" - Itens esperados: {items_expected}")
-        # print(f" - Itens obtidos: {result.items}")
         print(f" - Valor esperado: {value_expected}")
         print(f" - Valor obtido: {result.get_total_value()}\n")
         assert len(items_expected) == len(result.items)
@@ -245,7 +237,6 @@ def test_ten_knapsack_best_value_inst_7():
         print(f" - Tamanho mochila: {knapsack_size}")
         print(f" - Itens por tipo: {items}")
         print(f" - Quantidade itens obtidos: {len(result.items)}")
-        # print(f" - Itens obtidos: {result.items}")
         print(f" - Valor obtido: {result.get_total_value()}\n")
 
         print("test_ten_knapsack_best_value_inst_7 executado!\n")
@@ -269,7 +260,6 @@ def test_ten_knapsack_best_value_inst_8():
         print(f" - Tamanho mochila: {knapsack_size}")
         print(f" - Itens por tipo: {items}")
         print(f" - Quantidade itens obtidos: {len(result.items)}")
-        # print(f" - Itens obtidos: {result.items}")
         print(f" - Valor obtido: {result.get_total_value()}\n")
 
         print("test_ten_knapsack_best_value_inst_8 executado!\n")
