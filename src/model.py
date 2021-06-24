@@ -25,3 +25,9 @@ class Knapsack:
 
     def get_total_value(self):
         return sum([item.value for item in self.items])
+
+
+
+
+
+
